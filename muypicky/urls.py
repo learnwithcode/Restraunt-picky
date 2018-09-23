@@ -16,10 +16,10 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from restraunt.views import home, contact, about
+from restraunt.views import home, about, ContactView
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', home),
-    url(r'^contact/', contact),
+    url(r'^contact/', ContactView.as_view()),
     url(r'^about/', about),
 ]
