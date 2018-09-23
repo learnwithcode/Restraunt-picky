@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+        <div class="row">
+            <div class="col">
+                {% for obj in objects %}
+
+                <h4>{{ obj.name}}</h1><br/>
+                <h4>{{ obj.location}}</h1><br/>
+                <h4>{{ obj.category}}</h1><br/>
+
+                {% endfor %}
+        </div>
+    </div>
+</div> 
+
+{% endblock %}

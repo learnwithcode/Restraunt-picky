@@ -4,11 +4,21 @@
     {% include 'snippets/head.html' %}
   </head>
   <body>
-      <h1 class='text-center'>{{ title }}</h1>
-      <a href="/">Home</a>
-      <a href="/about/">About</a>
-      <a href="/contact/">contact</a>
-
+    <div class="container">
+        <div class="row">
+            <div class="col">
+              <h1 class='text-center'>{{ title }}</h1>
+                <div class='text-center' class="row">
+                  <div  class="col"></div>
+                  <a href="/">Home</a>
+                  <a href="/about/">About</a>
+                  <a href="/contact/">Contact</a>
+                  <a href="/restraunt/">Restraunt</a>
+                </div>
+              </div>
+            </div> 
+        </div>
+    </div>    
     {% block content %}
     {% endblock %}
 
