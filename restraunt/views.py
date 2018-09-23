@@ -1,23 +1,32 @@
 from django.shortcuts import render
 from django.views import View
+from django.views.generic import TemplateView
 
 # Create your views here.
 
-def home(request):
-    context = {
-        "title": "Home Page",
-    }
-    return render(request, "home.html", context)
+class HomeView(TemplateView):
+    template_name = 'home.html'
+    def get_context_data(self, *args, **Kwargs):
+        context = super(HomeView, self).get_context_data(*args, **Kwargs)
+        context = {
+            "title": "Home Page",
+        }
+        return context   
 
-def about(request):
-    context = {
-        "title": "About Page",
-    }
-    return render(request, "about.html", context)
+class AboutView(TemplateView):
+    template_name = 'about.html'
+    def get_context_data(self, *args, **Kwargs):
+        context = super(AboutView, self).get_context_data(*args, **Kwargs)
+        context = {
+            "title": "About Page",
+        }
+        return context   
 
-class ContactView(View):
-    def get(self, request, *args, **Kwargs): # *args, **Kwargs required when working with id
+class ContactView(TemplateView):
+    template_name = 'contact.html'
+    def get_context_data(self, *args, **Kwargs):
+        context = super(ContactView, self).get_context_data(*args, **Kwargs)
         context = {
             "title": "Contact Page",
         }
-        return render(request, "contact.html", context)        
+        return context      
